@@ -1,0 +1,23 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<title>ウェブページのタイトル</title>
+		<!-- ここでCSSを読み込み -->
+		<link rel="stylesheet" href="./style.css"/>
+	</head>
+	<body>
+		<div>&lt;div&gt;要素に対して背景色、内側余白、境界線、角丸を設定</div>
+		<p class="font-test">文字に対して文字のサイズ、太さ、フォント種類を設定</p>
+		<p>HTML側でクラスを指定すると「どの要素にCSSを適用するか」を指定できる</p>
+		<div>
+			<div>通常の子要素は親要素の左上から表示される</div>
+			<div class="width-half">通常&lt;div&gt;要素は自動的に幅が親要素の内枠いっぱいになるので、調整したい場合はwidthを使う</div>
+			<div class="position-absolute">position: absolute;を使うと、親要素の中で自由に位置を決定できる</div>
+			<div class="position-fixed">position: fixed;を使うと、画面の指定した位置に要素を表示できる</div>
+		</div>
+		
+	</body>
+</html>

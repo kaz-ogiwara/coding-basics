@@ -1,0 +1,47 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<meta name="format-detection" content="telephone=no">
+		<title>ウェブページのタイトル</title>
+		<!-- ここでCSSを読み込み -->
+		<link rel="stylesheet" href="./style.css"/>
+	</head>
+	<body>
+		<h4>ボタンが押されたらアラートを表示する</h4>
+		<button id="button-01">ボタン01</button>
+
+		<hr>
+		<h4>入力欄のテキストでページ表示を書き換える</h4>
+		<button id="button-02">ボタン02</button>
+		<br>
+		<br>
+		<input type="text" id="input-02" value="ABC" placeholder="入力欄が空になったときに表示される文章をplaceholderと呼びます"/>
+		<br>
+		<br>
+		<div id="output-02">ここに入力したテキストが表示されます。</div>
+
+		<hr>
+		<h4>クリックしたボタンで処理を分ける</h4>
+		<button class="button-03" id="button-03-01">背景色を赤にする</button>
+		<button class="button-03" id="button-03-02">背景色を黄にする</button>
+		<button class="button-03" id="button-03-03">背景色を青にする</button>
+		<br>
+		<br>
+		<div id="output-03">この要素の背景色が変わります。</div>
+
+		<hr>
+		<h4>要素を増やす／減らす</h4>
+		<button class="button-04" id="button-04-01">要素を減らす</button>
+		<button class="button-04" id="button-04-02">要素を増やす</button>
+		<br>
+		<br>
+		<div id="output-04">
+			<div class="output-04-item"></div>
+		</div>
+
+		<!-- ここでJavaScriptを読み込み -->
+		<script src="script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body {
+  background-color: #ffffff;
+
+  div {
+    position: relative;
+    background-color: #cce5ff;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 2px solid #fe8743;
+    border-radius: 4px;
+
+    &.width-half {
+      width: 50%;
+    }
+
+    &.position-absolute {
+      position: absolute;
+      bottom: 8px;
+      right: 20px;
+    }
+
+    &.position-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 80px;
+    }
+  }
+
+  p {
+    &.font-test {
+      color: #ff3322;
+      font-weight: bold; 
+    }
+  }
+
+}
