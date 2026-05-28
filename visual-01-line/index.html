@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>都道府県別人口推移</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>都道府県別人口推移</h1>
+
+    <div class="controls">
+      <label for="prefectureSelect">都道府県を選択：</label>
+      <select id="prefectureSelect"></select>
+
+      <label for="metricSelect">表示：</label>
+      <select id="metricSelect">
+        <option value="actual">実数</option>
+        <option value="index">1950年からの変化率</option>
+      </select>
+    </div>
+
+    <div id="chart"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
