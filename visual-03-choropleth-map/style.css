@@ -1,0 +1,29 @@
+/* style.css */
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+svg {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border: 1px solid #ddd;
+  background-color: #024;
+}
+
+.municipality {
+  stroke: #246;
+  stroke-width: 0.3;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  display: none;
+}
