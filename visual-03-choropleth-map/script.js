@@ -1,125 +1,117 @@
-// script.js
-
 Promise.all([
-  d3.json("N03-21_210101_designated_city.json"),
-  d3.json("data.json")
+  d3.json("map.json"),
+  d3.csv("data.csv", d => ({
+    code: d.code,
+    value: Number(d.value)
+  }))
 ]).then(([topoData, data]) => {
-
   const width = 900;
   const height = 900;
 
   const svg = d3.select("#map");
   const tooltip = d3.select("#tooltip");
 
-  // 色分けの区間を定義
-  const colorRules = [
-    [null, -1000, "#2166AC"],
-    [-1000, -500, "#4393C3"],
-    [-500, -50, "#92C5DE"],
-    [-50, 0, "#D1E5F0"],
-    [0, 50, "#FDDBC7"],
-    [50, 500, "#F4A582"],
-    [500, 1000, "#D6604D"],
-    [1000, null, "#B2182B"]
-  ];
-
-  // 数値に対応する色を返す
-  function getColor(value) {
-    if (value == null || Number.isNaN(value)) {
-      return "#eee";
-    }
-
-    value = value / 1000;
-
-    for (const [min, max, color] of colorRules) {
-      const lowerOk = min === null || value >= min;
-      const upperOk = max === null || value < max;
-
-      if (lowerOk && upperOk) {
-        return color;
-      }
-    }
-
-    return "#eee";
-  }
-
-  // TopoJSON内の地図オブジェクト名を取得
+  // TopoJSON内の最初のオブジェクト名を使う
   const objectName = Object.keys(topoData.objects)[0];
 
-  // TopoJSONをGeoJSONに変換
+  // TopoJSONをGeoJSONに変換する
   const geojson = topojson.feature(topoData, topoData.objects[objectName]);
 
-  // 自治体コードごとに「最後から3番目の値 − 最後の値」を計算
-  const municipalityValues = new Map();
+  // 自治体コードから値を引けるMapを作る
+  const valueByCode = new Map(
+    data.map(d => [d.code, Number.isNaN(d.value) ? null : d.value])
+  );
 
-  for (const code in data) {
-    const values = data[code];
+  // 色分けに使う値だけを取り出す
+  const values = Array.from(valueByCode.values()).filter(value => value !== null);
 
-    // 値が3つ未満の場合は計算しない
-    if (!Array.isArray(values) || values.length < 3) {
-      municipalityValues.set(code, null);
-      continue;
-    }
+  // 値を8段階の色に分ける
+  const colorScale = d3.scaleQuantile()
+    .domain(values)
+    .range(["#2166AC","#4393C3","#92C5DE","#D1E5F0","#FDDBC7","#F4A582","#D6604D","#B2182B"]);
 
-    const thirdFromLast = values[values.length - 3];
-    const last = values[values.length - 1];
 
-    const value = thirdFromLast - last;
-
-    municipalityValues.set(code, value);
+  // 値に対応する色を返す
+  function getColor(value) {
+    if (value === null || Number.isNaN(value)) return "#ddd";
+    return colorScale(value);
   }
 
-  // 地図がSVG内に収まるように投影法を設定
-  const projection = d3.geoMercator()
-    .fitSize([width, height], geojson);
+  // 数値をカンマ区切りで表示する
+  const formatValue = d3.format(",");
 
-  const path = d3.geoPath()
-    .projection(projection);
+  // 地図がSVG内に収まるように投影法を作る
+  const projection = d3.geoMercator().fitSize([width, height], geojson);
 
-  // path要素をまとめて動かすためのグループを作る
+  // GeoJSONからSVGのpath文字列を作る関数を用意する
+  const path = d3.geoPath().projection(projection);
+
+  // ズーム時にまとめて動かすグループを作る
   const g = svg.append("g");
 
-  // ズーム機能を作る
+  // ズームとドラッグの動きを作る
   const zoom = d3.zoom()
     .scaleExtent([1, 8])
-    .on("zoom", event => {
-      g.attr("transform", event.transform);
-    });
+    .on("start", () => svg.style("cursor", "grabbing"))
+    .on("zoom", event => g.attr("transform", event.transform))
+    .on("end", () => svg.style("cursor", "grab"));
 
-  // svgにズーム機能を適用する
+  // SVGにズームとドラッグを適用する
   svg.call(zoom);
 
-  // 自治体ごとの地図を描画
+  // 市区町村名を作る
+  function getMunicipalityName(properties) {
+    return [
+      properties.N03_001,
+      properties.N03_002,
+      properties.N03_003,
+      properties.N03_004
+    ].filter(Boolean).join(" ");
+  }
+
+  // ツールチップを地図の左上に置く
+  function moveTooltipToMapTopLeft() {
+    const rect = svg.node().getBoundingClientRect();
+
+    tooltip
+      .style("left", `${rect.left + 12}px`)
+      .style("top", `${rect.top + 12}px`);
+  }
+
+  // ホバー中の市区町村情報を表示する
+  function showTooltip(event, d) {
+    const code = d.properties.N03_007;
+    const name = getMunicipalityName(d.properties);
+    const value = valueByCode.get(code);
+    const textValue = value === null || value === undefined ? "データなし" : formatValue(value);
+
+    moveTooltipToMapTopLeft();
+
+    tooltip
+      .style("display", "block")
+      .html(`
+        <strong>${name}</strong><br>
+        自治体コード：${code}<br>
+        値：${textValue}
+      `);
+  }
+
+  // 自治体ごとの地図を描画する
   g.selectAll("path")
     .data(geojson.features)
     .join("path")
-    .attr("class", "municipality")
     .attr("d", path)
-    .attr("fill", d => {
-      const code = d.properties.N03_007;
-      const value = municipalityValues.get(code);
-
-      return getColor(value);
+    .attr("fill", d => getColor(valueByCode.get(d.properties.N03_007)))
+    .attr("stroke", "rgba(20,40,60,0.5)")
+    .attr("stroke-width", 0.4)
+    .style("vector-effect", "non-scaling-stroke")
+    .on("mouseenter", function (event, d) {
+      d3.select(this).attr("stroke", "rgba(240,240,0,0.9)").attr("stroke-width", 4);
+      showTooltip(event, d);
     })
-    .on("mousemove", (event, d) => {
-      const code = d.properties.N03_007;
-      const prefecture = d.properties.N03_001 || "";
-      const city = d.properties.N03_003 || "";
-      const town = d.properties.N03_004 || "";
-      const value = municipalityValues.get(code);
-
-      tooltip
-        .style("display", "block")
-        .style("left", event.pageX + 12 + "px")
-        .style("top", event.pageY + 12 + "px")
-        .html(`
-          <strong>${prefecture} ${city}${town}</strong><br>
-          自治体コード：${code}<br>
-          2020年度の寄付・控除額の差：${value ?? "データなし"} 千円
-        `);
-    })
-    .on("mouseleave", () => {
+    .on("mousemove", showTooltip)
+    .on("mouseleave", function () {
+      d3.select(this).attr("stroke", "rgba(20,40,60,0.5)").attr("stroke-width", 0.4);
       tooltip.style("display", "none");
     });
-
 });

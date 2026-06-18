@@ -3,19 +3,33 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>D3 市区町村別日本地図</title>
-  <link rel="stylesheet" href="style.css">
+  <title>D3.js 市区町村別日本地図</title>
+  <style>
+    #map {
+      width: 900px;
+      height: 900px;
+      background-color: #246;
+      cursor: grab;
+    }
+
+    #tooltip {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      pointer-events: none;
+      font-size: 12px;
+      color: #333;
+    }
+</style>
 </head>
 <body>
-
-<h1>市区町村別の日本地図</h1>
-
-<svg id="map" viewBox="0 0 900 900"></svg>
-<div id="tooltip" class="tooltip"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
-<script src="script.js"></script>
-
+  <h1>市区町村別の日本地図</h1>
+  <svg id="map"></svg>
+  <div id="tooltip"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+  <script src="script.js"></script>
 </body>
 </html>
