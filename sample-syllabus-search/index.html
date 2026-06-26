@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="cover" class="show">
+			<p>ロードしています...</p>
+		</div>
+
+		<section id="section-title">
+			<img src="img/logo.png" alt="専修大学ロゴ" />
+			<h4>シラバス検索</h4>
+		</section>
+
+		<main>
+			<section id="section-search">
+				<input type="text" id="input-search" placeholder="検索語句を入力してください">
+				<div class="checkboxes">
+					<div class="checkbox on">科目名</div>
+					<div class="checkbox">教員名</div>
+					<div class="checkbox">科目内容</div>
+				</div>
+			</section>
+
+			<section id="section-details">
+
+				<div class="title">詳細検索<img src="img/icon-arrow-down.svg" alt="閉じる"></div>
+				<div class="content">
+
+					<div class="row">
+						<div class="search-item">
+							<h5>年度</h5>
+							<select id="select-year">
+								<option value="2026">2026年度</option>
+								<option value="2025">2025年度</option>
+								<option value="2024">2024年度</option>
+								<option value="2023">2023年度</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<h5>コースコード</h5>
+						<input type="text" placeholder="分野" />
+						<input type="text" placeholder="水準" />
+						<input type="text" placeholder="開講学部等" />
+					</div>
+
+					<div class="row">
+						<h5>学部・学科／研究科・専攻</h5>
+						<select id="select-faculty">
+							<option>指定なし</option>
+
+							<optgroup label="経済学部">
+								<option>現代経済学科</option>
+								<option>生活環境経済学科</option>
+								<option>国際経済学科</option>
+							</optgroup>
+
+							<optgroup label="法学部">
+								<option>法律学科</option>
+								<option>政治学科</option>
+							</optgroup>
+
+							<optgroup label="経営学部">
+								<option>経営学科</option>
+								<option>ビジネスデザイン学科</option>
+							</optgroup>
+
+							<optgroup label="商学部">
+								<option>マーケティング学科</option>
+								<option>会計学科</option>
+							</optgroup>
+
+							<optgroup label="文学部">
+								<option>日本文学文化学科</option>
+								<option>英語英米文学科</option>
+								<option>哲学科</option>
+								<option>歴史学科</option>
+								<option>環境地理学科</option>
+								<option>ジャーナリズム学科</option>
+							</optgroup>
+
+							<optgroup label="ネットワーク情報学部">
+								<option>ネットワーク情報学科</option>
+							</optgroup>
+
+							<optgroup label="人間科学部">
+								<option>心理学科</option>
+								<option>社会学科</option>
+							</optgroup>
+
+							<optgroup label="国際コミュニケーション学部">
+								<option>日本語学科</option>
+								<option>異文化コミュニケーション学科</option>
+							</optgroup>
+
+							<optgroup label="経済学研究科">
+								<option>経済学専攻</option>
+							</optgroup>
+
+							<optgroup label="法学研究科">
+								<option>法学専攻</option>
+								<option>民事法学専攻</option>
+								<option>公法学専攻</option>
+							</optgroup>
+
+							<optgroup label="文学研究科">
+								<option>日本語日本文学専攻</option>
+								<option>英語英米文学専攻</option>
+								<option>哲学専攻</option>
+								<option>歴史学専攻</option>
+								<option>地理学専攻</option>
+								<option>社会学専攻</option>
+								<option>心理学専攻</option>
+								<option>ジャーナリズム学専攻</option>
+							</optgroup>
+
+							<optgroup label="経営学研究科">
+								<option>経営学専攻</option>
+							</optgroup>
+
+							<optgroup label="商学研究科">
+								<option>商学専攻</option>
+								<option>会計学専攻</option>
+							</optgroup>
+
+							<optgroup label="法務研究科">
+								<option>法務専攻</option>
+							</optgroup>
+
+						</select>
+					</div>
+
+					<div class="row">
+						<h5>開講区分</h5>
+						<div class="checkboxes">
+							<div class="checkbox on">一部生田</div>
+							<div class="checkbox on">一部神田</div>
+							<div class="checkbox on">二部</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<h5>開講期間</h5>
+						<div class="checkboxes">
+							<div class="checkbox on">前期</div>
+							<div class="checkbox">後期</div>
+							<div class="checkbox">通年</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<table id="table-timetable">
+							<thead>
+								<tr>
+									<th></th>
+									<th>月<span>曜日</span></th>
+									<th>火<span>曜日</span></th>
+									<th>水<span>曜日</span></th>
+									<th>木<span>曜日</span></th>
+									<th>金<span>曜日</span></th>
+									<th>土<span>曜日</span></th>
+									<th>日<span>曜日</span></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><th>1<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>2<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>3<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>4<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>5<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>6<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+								<tr><th>7<span>限</span></th><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="row">
+						<button id="button-search">授業を検索する</button>
+					</div>
+				</div>
+			</section>
+
+			<section id="section-result-wrapper">
+				<section id="section-result"></section>
+			</section>
+
+			<footer>
+				<hr>
+				<div>
+					<a href="https://www.google.com/">専修大学</a>
+					<span>｜</span>
+					<a href="https://www.senshu-u.ac.jp/albums/abm.php?d=3127&f=abm00036029.pdf&n=syllabusmanual_t.pdf">シラバスシステム執筆・校正マニュアル</a>
+					<span>｜</span>
+					<a href="https://www.senshu-u.ac.jp/campuslife/scholarship/feefree-support.html">実務経験のある教員等による授業科目</a>
+				</div>
+			</footer>
+
+		</main>
+
+		<footer id="footer-meta">
+			<p>このページは授業「技術とメディア」で作成されたサンプルです。専修大学の公式サイトではなく、内容の正確性は保証されません。</p>
+		</footer>
+
+		</section>
+		<script src="js/script.js"></script>
+	</body>
+</html>
