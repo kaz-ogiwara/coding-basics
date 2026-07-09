@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+body {
+  background-color: #fff;
+}
+
+
+.button-notification {
+  padding: 8px 20px;
+  background-color: #369;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  margin: 48px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #47a;
+  }
+}
+
+
+#notification-container {
+
+  // 画面の右下端に表示する
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+
+  .notification {
+
+    // 最初は右側に隠しておく
+    transform: translateX(calc(100% + 16px));
+    transition: all ease 0.3s;
+
+    position: relative;
+    width: 320px;
+    margin-top: 8px;
+    padding: 16px;
+    color: #fff;
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+
+    // activeクラスが付くと表示される
+    &.active {
+      transform: translateX(0);
+    }
+
+    // 閉じるボタンを右上に置く
+    .button-close {
+      width: 44px;
+      height: 44px;
+      border: none;
+      border-radius: 24px;
+      position: absolute;
+      top: 4px;
+      right: 4px;
+
+      background-color: rgba(255,255,255,0.0);
+      background-image: url(./icon-close.svg);
+      background-size: 24px;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: all ease 200ms;
+
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+  }
+
+
+}
+
+
+

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+body {
+  background-color: #fff;
+}
+
+.tab-container {
+  width: calc(100% - 32px);
+  max-width: 720px;
+  margin: auto;
+  margin-top: 48px;
+
+  .tabs {
+    display: flex;
+
+    .tab-button {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+      color: #aaa;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-bottom: 4px solid #aaa;
+      cursor: pointer;
+
+      &.active {
+        color: #369;
+        border-bottom: 4px solid #369;
+      }
+    }
+  }
+
+  .tab-contents {
+    .tab-content {
+      display: none;
+      padding-top: 16px;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+

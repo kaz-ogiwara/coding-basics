@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+
+body {
+  background-color: #fff;
+}
+
+
+.button-modal {
+  padding: 8px 20px;
+  background-color: #369;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  margin: 48px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #47a;
+  }
+}
+
+
+#modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  transition: all ease 250ms;
+
+  background-color: rgba(0,0,0,0.9);
+
+  // 非表示にする
+  opacity: 0;
+  pointer-events: none;
+
+  .inner {
+    // モーダル部分の内側余白。幅の計算や閉じるボタンの位置調整に使う
+    $padding: 16px;
+
+    // 画面の中心に表示する
+    position: fixed;
+    top: calc(50% + 32px);  // 最初はやや下側に
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    // 幅と外見の設定
+    width: 480px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px 24px 24px;
+
+    transition: top ease 250ms;
+
+    .button-close {
+      padding: 8px 20px;
+      background-color: #369;
+      color: #ffffff;
+      border: none;
+      border-radius: 20px;
+      display: block;
+      margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #47a;
+      }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    pointer-events: inherit;
+
+    .inner {
+      // 改めて中心に表示
+      top: 50%;
+    }
+  }
+
+}
+
+
+

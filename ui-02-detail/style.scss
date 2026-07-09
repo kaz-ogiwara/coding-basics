@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+
+body {
+  background-color: #fff;
+}
+
+
+.button-panel {
+  padding: 8px 20px;
+  background-color: #369;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  display: block;
+  margin: 48px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #47a;
+  }
+}
+
+
+#panel-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  transition: all ease 250ms;
+
+  background-color: rgba(0,0,0,0);
+  pointer-events: none;
+
+  .inner {
+    // パネル部分の内側余白。幅の計算や閉じるボタンの位置調整に使う
+    $padding: 16px;
+
+    position: fixed;
+    top: 0;
+    right: calc(-320px - ($padding * 2));
+    width: calc(100% - 16px);
+    max-width: 320px;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    padding: $padding;
+    padding-top: calc($padding * 3);
+    opacity: 1;
+    transition: all ease 250ms;
+
+    .button-close {
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 24px;
+      position: absolute;
+      top: $padding;
+      right: $padding;
+
+      background-color: rgba(255,255,255,0.0);
+      background-image: url(./icon-close.svg);
+      background-size: 36px;
+      background-position: center;
+      transition: all ease 200ms;
+
+
+      &:hover {
+        cursor: pointer;
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+  }
+
+  &.active {
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: inherit;
+
+    .inner {
+      right: 0px;
+    }
+  }
+
+}
+
+
+
