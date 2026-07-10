@@ -7,3 +7,7 @@
 - [web-04-js](https://kaz-ogiwara.github.io/coding-basics/web-04-js/)
 - [web-05-chart](https://kaz-ogiwara.github.io/coding-basics/web-05-chart/)
 - [web-06-chart-2](https://kaz-ogiwara.github.io/coding-basics/web-06-chart-2/)
+- [ui-01-tab](https://kaz-ogiwara.github.io/coding-basics/ui-01-tab/)
+- [ui-02-detail](https://kaz-ogiwara.github.io/coding-basics/ui-02-detail/)
+- [ui-03-modal](https://kaz-ogiwara.github.io/coding-basics/ui-03-modal/)
+- [ui-04-notification](https://kaz-ogiwara.github.io/coding-basics/ui-04-notification/)
