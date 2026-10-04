@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>月別の値</h1>
+
+  <!-- 変更：サブタイトルをCSSで指定するためclassを追加 -->
+  <p class="subtitle">2026年1月から5月までの値</p>
+
+  <svg id="chart" width="500" height="300"></svg>
+
+  <!-- 変更：注記をCSSで指定するためclassを追加 -->
+  <p class="note">注：値はサンプルデータ。</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>
