@@ -1,0 +1,74 @@
+body {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: sans-serif;
+  color: #111827;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.line {
+  fill: none;
+  stroke-width: 3;
+}
+
+/* 変更：高校生数の折れ線を青色に設定 */
+.students {
+  stroke: #174EA6;
+}
+
+/* 変更：高校野球部員数の折れ線を赤色に設定 */
+.baseball {
+  stroke: #A50E0E;
+}
+
+.grid line {
+  stroke: #e5e7eb;
+}
+
+.grid path {
+  stroke: none;
+}
+
+.axis path,
+.axis line {
+  stroke: #9ca3af;
+}
+
+.axis text {
+  fill: #4b5563;
+  font-size: 12px;
+}
+
+/* 追加：左右の軸タイトルの文字サイズを設定 */
+.axis-title {
+  font-size: 12px;
+}
+
+/* 追加：左軸のタイトルを高校生数と同じ青色に設定 */
+.axis-title.students {
+  fill: #174EA6;
+  stroke: none;
+}
+
+/* 追加：右軸のタイトルを高校野球部員数と同じ赤色に設定 */
+.axis-title.baseball {
+  fill: #A50E0E;
+  stroke: none;
+}
+
+.note {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 12px;
+}

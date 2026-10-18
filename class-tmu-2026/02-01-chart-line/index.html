@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 変更：ページの内容に合わせてタイトルを変更 -->
+  <title>新宿駅の乗車人員</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 変更：折れ線グラフの内容に合わせてタイトルを変更 -->
+  <h1>新宿駅の1日平均乗車人員</h1>
+
+  <!-- 変更：表示する期間と内容に合わせてサブタイトルを変更 -->
+  <p class="subtitle">2016年度から2024年度までの推移</p>
+
+  <!-- 変更：6桁の数値を表示するため、SVGの横幅を少し広げる -->
+  <svg id="chart" width="600" height="320"></svg>
+
+  <!-- 変更：実データの定義と出典を記載 -->
+  <p class="note">注：乗車人員には降車人員を含まない。出典：JR東日本「各駅の乗車人員」</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>

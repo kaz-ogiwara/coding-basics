@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 変更：グラフの内容に合わせてタイトルを変更 -->
+  <title>東京ディズニーリゾートの入園者数と入園料</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 変更：グラフの内容に合わせてタイトルを変更 -->
+  <h1>東京ディズニーリゾートの入園者数と入園料</h1>
+
+  <!-- 変更：表示期間とグラフの内容に合わせてサブタイトルを変更 -->
+  <p class="subtitle">2001〜2024年度、年間入園者数と1デーパスポート大人料金の推移</p>
+
+  <svg id="chart" width="600" height="340"></svg>
+
+  <!-- 変更：指定された出所と注に変更 -->
+  <p class="note">出所：オリエンタルランド『FACT BOOK』および『Integrated Report 2025』。<br>注：「入園料」は1デーパスポートの大人料金。2020年度以降は変動価格制で最低料金と最高料金に分かれている。</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>

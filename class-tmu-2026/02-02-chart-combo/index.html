@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 変更：グラフの内容に合わせてタイトルを変更 -->
+  <title>高校生数と高校野球部員数</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 変更：グラフの内容に合わせてタイトルを変更 -->
+  <h1>全国の高校生数と高校野球部員数</h1>
+
+  <!-- 変更：表示する期間に合わせてサブタイトルを変更 -->
+  <p class="subtitle">1982年から2025年までの推移</p>
+
+  <svg id="chart" width="600" height="320"></svg>
+
+  <!-- 変更：データの定義と出典を変更 -->
+  <p class="note">注：高校生数は高等学校（全日制・定時制）の在学者数。高校野球部員数は硬式で、2020年は7月末、2021〜2024年は5月末現在。出典：文部科学省「学校基本統計」、日本高等学校野球連盟「部員数統計・硬式」</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="script.js"></script>
+</body>
+</html>

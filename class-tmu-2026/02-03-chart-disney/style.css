@@ -1,0 +1,77 @@
+body {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: sans-serif;
+  color: #111827;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* 変更：入園者数の棒グラフ用のデザイン */
+.visitors-bar {
+  fill: #174EA6;
+  opacity: 0.75;
+}
+
+.line {
+  fill: none;
+  stroke-width: 3;
+  stroke: #A50E0E;
+}
+
+.grid line {
+  stroke: #e5e7eb;
+}
+
+.grid path {
+  stroke: none;
+}
+
+.axis path,
+.axis line {
+  stroke: #9ca3af;
+}
+
+.axis text {
+  fill: #4b5563;
+  font-size: 12px;
+}
+
+.axis-title {
+  font-size: 12px;
+}
+
+/* 変更：左軸タイトルを入園者数の色に変更 */
+.axis-title.visitors {
+  fill: #174EA6;
+  stroke: none;
+}
+
+/* 変更：右軸タイトルを入園料の色に変更 */
+.axis-title.price {
+  fill: #A50E0E;
+  stroke: none;
+}
+
+/* 追加：分岐した最低料金・最高料金のラベル */
+.price-label {
+  fill: #A50E0E;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.note {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 12px;
+}

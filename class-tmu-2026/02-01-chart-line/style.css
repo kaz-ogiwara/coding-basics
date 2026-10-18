@@ -1,0 +1,49 @@
+body {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: sans-serif;
+  color: #111827;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* 変更：棒ではなく折れ線を表示するためのデザイン */
+.line {
+  fill: none;
+  stroke: #174EA6;
+  stroke-width: 5;
+}
+
+.grid line {
+  stroke: #e5e7eb;
+}
+
+.grid path {
+  stroke: none;
+}
+
+.axis path,
+.axis line {
+  stroke: #9ca3af;
+}
+
+.axis text {
+  fill: #4b5563;
+  font-size: 12px;
+}
+
+.note {
+  margin-top: 12px;
+  color: #6b7280;
+  font-size: 12px;
+}
