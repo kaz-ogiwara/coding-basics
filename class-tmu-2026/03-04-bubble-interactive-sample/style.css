@@ -1,0 +1,125 @@
+body {
+  font-family: sans-serif;
+  color: #334155;
+}
+#chart {
+  max-width: 100%;
+  height: auto;
+}
+.grid line {
+  stroke: #ccc;
+  stroke-dasharray: 3 3;
+}
+.grid path {
+  display: none;
+}
+.axis text {
+  fill: #334155;
+  font-size: 12px;
+}
+.axis .tick-unit {
+  fill: #666;
+  font-size: 9px;
+}
+.axis path,
+.axis line {
+  stroke: #999;
+}
+.bubble {
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+.bubble.visible {
+  opacity: 0.7;
+}
+.bubble.highlighted {
+  opacity: 0.9;
+  stroke: #000;
+}
+.color-legend {
+  opacity: 0.2;
+  transition: opacity 0.2s;
+}
+.color-legend.visible {
+  opacity: 1;
+}
+.legend-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+.legend-label {
+  font-size: 12px;
+}
+#search-wrapper {
+  display: inline-block;
+  position: relative;
+}
+#suggestions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  z-index: 20;
+}
+#suggestions button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: white;
+  padding: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+#suggestions button:hover,
+#suggestions button:focus {
+  background: #e2e8f0;
+}
+#tooltip {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+
+  background-color: #444;
+  color: rgba(255,255,255,0.7);
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+#tooltip.visible {
+  opacity: 1;
+}
+#tooltip h4 {
+  color: #fefefe;
+  font-size: 1rem;
+  margin: 0;
+}
+#tooltip h5 {
+  font-size: 0.9rem;
+  margin: 0;
+}
+#tooltip::before,
+#tooltip::after {
+  content: "";
+  position: absolute;
+  left: var(--arrow-left);
+  transform: translateX(-50%);
+  border-style: solid;
+}
+#tooltip::before {
+  top: -14px;
+  border-width: 0 7px 14px;
+  border-color: transparent transparent #444;
+}
+#tooltip::after {
+  top: -12px;
+  border-width: 0 6px 12px;
+  border-color: transparent transparent #444;
+}

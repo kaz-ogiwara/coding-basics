@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  color: #334155;
+}
+#chart {
+  max-width: 100%;
+  height: auto;
+}
+.grid line {
+  stroke: #ccc;
+  stroke-dasharray: 3 3;
+}
+.grid path {
+  display: none;
+}
+.axis text {
+  fill: #334155;
+  font-size: 12px;
+}
+.axis .tick-unit {
+  fill: #666;
+  font-size: 9px;
+}
+.axis path,
+.axis line {
+  stroke: #999;
+}
+.legend-title {
+  font-size: 13px;
+  font-weight: bold;
+}
+.legend-label {
+  font-size: 12px;
+}
