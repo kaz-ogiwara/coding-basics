@@ -1,0 +1,41 @@
+browser_name,file_url,category
+Chrome,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/chrome.png,Google系
+IE,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/ie.png,Microsoft系
+Safari,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/safari.png,Apple系
+Firefox,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/firefox.png,Mozilla系
+Android,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/android.png,Google系
+Edge,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/edge.png,Microsoft系
+Opera,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/opera.png,その他ブラウザ
+Edge Legacy,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/edge_legacy.png,Microsoft系
+Samsung Internet,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/samsung_internet.png,その他ブラウザ
+Sleipnir,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sleipnir.png,その他ブラウザ
+Sony PS3,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sony_ps3.png,ゲーム機
+UC Browser,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/uc_browser.png,その他ブラウザ
+Lunascape,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/lunascape.png,その他ブラウザ
+360 Safe Browser,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/360_safe_browser.png,その他ブラウザ
+Puffin,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/puffin.png,その他ブラウザ
+Maxthon,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/maxthon.png,その他ブラウザ
+QQ Browser,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/qq_browser.png,その他ブラウザ
+Pale Moon,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/pale_moon.png,その他ブラウザ
+Sogou Explorer,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sogou_explorer.png,その他ブラウザ
+DoCoMo,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/docomo.png,その他ブラウザ
+Sony PSP Vita,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sony_psp_vita.png,ゲーム機
+Iron,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/iron.png,その他ブラウザ
+Sony PS4,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sony_ps4.png,ゲーム機
+Brave,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/brave.png,その他ブラウザ
+Mozilla,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/mozilla.png,Mozilla系
+Unknown,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/unknown.png,不明・分類外
+Coc Coc,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/coc_coc.png,その他ブラウザ
+Vivaldi,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/vivaldi.png,その他ブラウザ
+Chromium,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/chromium.png,Google系
+NetFront NX,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/netfront_nx.png,その他ブラウザ
+Silk,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/silk.png,その他ブラウザ
+KDDI,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/kddi.png,その他ブラウザ
+Yandex Browser,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/yandex_browser.png,その他ブラウザ
+Windows Media Player,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/windows_media_player.png,不明・分類外
+Sony PSP,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/sony_psp.png,ゲーム機
+Nintendo 3DS,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/nintendo_3ds.png,ゲーム機
+IEMobile,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/iemobile.png,Microsoft系
+Whale Browser,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/whale_browser.png,その他ブラウザ
+NetFront,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/netfront.png,その他ブラウザ
+Other,https://raw.githubusercontent.com/kaz-ogiwara/coding-basics/refs/heads/main/data/bar-chart-race-browser-logos/other.png,不明・分類外
