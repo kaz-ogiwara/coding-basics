@@ -1,0 +1,13 @@
+/* 地図の表示サイズ */
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 市区町村の塗りと境界線 */
+.municipality {
+  fill: var(--map-color);
+  stroke: #ffffff;
+  stroke-width: 0.3;
+}

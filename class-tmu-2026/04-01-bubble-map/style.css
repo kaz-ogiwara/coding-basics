@@ -1,0 +1,13 @@
+/* 日本地図の色と輪郭 */
+.land {
+  fill: #eeeeee;
+  stroke: #999999;
+}
+
+/* 温泉の円の見た目 */
+.spring {
+  fill: var(--spring-color); /* 水温に応じた色をJavaScriptから受け取る */
+  fill-opacity: 0.5;
+  stroke: #555555;
+  stroke-width: 0.3;
+}
