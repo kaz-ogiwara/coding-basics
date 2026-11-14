@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>八王子市の人口分布</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /*
+    path {
+      filter: drop-shadow(0 0 6px red);
+    }
+    */
+  </style>
+</head>
+<body>
+  <svg width="800" height="600"></svg>
+  <script>
+    // svg要素を指定
+    const svg = d3.select("svg");
+
+    // メッシュのGeoJSONファイルを読み込む
+    d3.json("mesh.json").then(data => {
+
+      // GeoJSONの座標を反転させる（D3.jsの読み込み順と元データの順序が異なるため）
+      data.features.forEach(feature => {
+        feature.geometry.coordinates.forEach(ring => ring.reverse());
+      });
+
+      // 投影法を設定
+      const projection = d3.geoMercator()
+        .fitExtent([[20, 20], [780, 580]], data);
+
+      // パスを作成
+      const path = d3.geoPath().projection(projection);
+
+      // 色のスケールを設定
+      const color = d3.scaleThreshold()
+        .domain([10,100,1000])
+        .range([
+          "#ace", // 10人未満
+          "#69d", // 10〜100人
+          "#24c"  // 1000人以上
+        ]);
+
+      // パスを描画
+      svg.selectAll("path")
+        .data(data.features)
+        .join("path")
+        .attr("d", path)
+        .attr("fill", d => color(+d.properties.PopT))
+        .attr("stroke", "#999")
+        .attr("stroke-width", 0.2)
+        .append("title")
+        .text(d => `人口: ${Math.round(d.properties.PopT)}人`);
+    });
+  </script>
+</body>
+</html>
