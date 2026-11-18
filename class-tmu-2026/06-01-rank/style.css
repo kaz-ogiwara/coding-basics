@@ -1,0 +1,27 @@
+/* 幅が足りない画面では横スクロール */
+.chart-wrap {
+  overflow-x: auto;
+}
+
+#chart {
+  display: block;
+  width: 100%;
+}
+
+/* 順位を結ぶ線 */
+.link {
+  fill: none;
+  stroke: #999;
+  stroke-width: 1.5;
+}
+
+/* 順位と出演者名 */
+.label {
+  font-size: 12px;
+}
+
+/* 左右の見出し */
+.heading {
+  font-size: 12px;
+  font-weight: bold;
+}
