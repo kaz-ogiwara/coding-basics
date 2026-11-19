@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>世界地図の投影法を比較する</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/d3.v3.min.js"></script>
+  <script defer src="data/world.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="heading">
+      <h1>世界地図の投影法を比較する</h1>
+    </header>
+    <section class="panel" aria-label="投影法の比較">
+      <div class="toolbar">
+        <div class="field">
+          <label for="projection">投影法</label>
+          <select id="projection">
+            <option value="orthographic" selected>Orthographic（正射図法）</option>
+            <option value="mercator">Mercator（メルカトル図法）</option>
+            <option value="equirectangular">Equirectangular（正距円筒図法）</option>
+            <option value="mollweide">Mollweide（モルワイデ図法）</option>
+            <option value="equalEarth">Equal Earth（イコールアース図法）</option>
+            <option value="winkelTripel">Winkel Tripel（ヴィンケル図法）</option>
+          </select>
+        </div>
+        <div class="actions">
+          <label class="check"><input type="checkbox" id="grid" checked> 経緯線</label>
+          <label class="check"><input type="checkbox" id="highlight" checked> 面積比較</label>
+        </div>
+      </div>
+      <div class="map-frame">
+        <canvas id="map" role="img" aria-label="正射図法による世界地図" width="1040" height="620">世界地図の表示にはCanvas対応ブラウザが必要です。</canvas>
+        <p id="error" class="error" hidden>地図の読み込みに失敗しました。ZIPをすべて展開してから index.html を開いてください。</p>
+      </div>
+      <div class="map-footer">
+        <p id="legend" class="legend"><span class="swatch africa"></span> アフリカ <span class="swatch greenland"></span> グリーンランド</p>
+      </div>
+      <div class="explanation" aria-live="polite">
+        <div><h2 id="name">正射図法 <span>Orthographic</span></h2></div>
+        <div><p id="description">地球を遠方から見たように表現する図法。手前の半球のみを表示。周辺部ほど大きな形状・面積のゆがみ。</p></div>
+      </div>
+    </section>
+    <footer class="footer">地図データ：<a href="https://www.naturalearthdata.com/">Natural Earth</a></footer>
+  </main>
+</body>
+</html>
